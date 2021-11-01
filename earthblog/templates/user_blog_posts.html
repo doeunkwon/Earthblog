@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<img src="{{url_for('static',filename='headers/paul-rysz-EE6RhhcpY4c-unsplash.jpg')}}"
+style="width:100%;height:10%" alt="first">
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 style='font-size:50px'>@{{user.username}}'s blog</h1>
+  <p style='color:white'>{{user.email}} | activist #{{user.id}}</p>
+  <br>
+  <img style="border-radius:100%" align='center' height='350' width='350' src="{{url_for('static',filename='profile_pics/'+user.profile_image)}}">
+</div>
+
+<br>
+
+{% for post in blog_posts.items %}
+  <div class="container">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="container">
+          <br>
+          <h2><a style=color:#1F4068 class="card-title" href='{{url_for('blog_posts.blog_post',
+          blog_post_id=post.id)}}'>"{{post.title}}"</a></h2>
+          <p style=color:#1F4068;text-transform:lowercase>posted on: {{post.date.strftime('%B %d, %Y')}}</p>
+          <a class="btn btn-primary" style='background-color:#17706E;border-color:#17706E' href="{{url_for('blog_posts.blog_post',blog_post_id=post.id)}}">read post</a>
+          <br><br>
+        </div>
+      </li>
+    </ul>
+  </div>
+{% endfor %}
+
+<br><br>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% for page_num in blog_posts.iter_pages(left_edge=1,right_edge=1,
+    left_current=1,right_current=2) %}
+      {% if blog_posts.page == page_num %}
+        <li class="page-item disabled">
+          <a class="page-link" href="{{url_for('users.user_posts',username=
+          user.username,page=page_num)}}">{{page_num}}</a>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a class="page-link" href="{{url_for('users.user_posts',username=
+          user.username,page=page_num)}}">{{page_num}}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+<br><br>
+
+{% endblock %}

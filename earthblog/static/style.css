@@ -1,0 +1,56 @@
+h1{
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+h2{
+  font-family: 'Roboto Slab', serif;
+}
+
+h3{
+  font-family: 'Roboto Slab', serif;
+}
+
+h4{
+  font-family: 'Roboto Slab', serif;
+}
+
+h5{
+  font-family: 'Roboto Slab', serif;
+}
+
+h6{
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+p{
+  color: black;
+  font-family: 'Roboto Slab', serif;
+}
+
+body{
+  color: #204051
+}
+
+.navbar{
+  background-color: #092532 !important;
+}
+
+.navbar .navbar-brand{
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.navbar .navbar-nav li a{
+  color: white !important;
+  font-family: 'Roboto Slab', serif;
+}
+
+.jumbotron{
+  background-color: #17706E;
+}
+
+body{
+  background-color: #DDF3F5
+}

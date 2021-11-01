@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<img src="{{url_for('static',filename='headers/adriel-kloppenburg-TyWBZWsZSSg-unsplash.jpg')}}"
+style="width:100%;height:10%" alt="first">
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 style='font-size:50px'>Speak up, @{{current_user.username}}.</h1>
+  <h5 style=color:#FFFFFF>Blog your ideas.</h5>
+</div>
+
+<div class="container">
+  <form class="form-group" method="POST">
+    {{form.hidden_tag()}}
+    <div class="form-group">
+      <h6>
+        {{form.title.label(class='form-control-label', style='color:#1F4068')}}
+        {{form.title(class='form-control form-control text-center', style='width:500px')}}
+        <br>
+        {{form.text.label(class='form-control-label', style='color:#1F4068')}}
+        {{form.text(class='form-control form-control text-center', style='width:500px;height:200px')}}
+        <br>
+        {{form.submit(class='btn btn-primary', style='background-color:#17706E;border-color:#17706E')}}
+      </h6>
+    </div>
+  </form>
+</div>
+
+<br><br>
+
+{% endblock %}

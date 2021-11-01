@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<img src="{{url_for('static',filename='headers/casey-horner-1Mknoq9KnOI-unsplash.jpg')}}"
+style="width:100%;height:10%" alt="first">
+
+<div class="jumbotron jumbotron-fluid">
+  <h2 style='color:white'><b>Sign in</b> to <i>blog up</i>.</h2>
+  <h6 style='color:white'>Let your mind wander.</h6>
+</div>
+
+<div class="container">
+  <form method="POST">
+    {{form.hidden_tag()}}
+    <div class="form-group">
+      {{form.email.label(class='form-group')}} {{form.email(class='form-control text-center', style='width:400px')}}
+    </div>
+    <div class="form-group">
+      {{form.password.label(class='form-group')}} {{form.password(class='form-control text-center', style='width:400px')}}
+    </div>
+    <div class="form-group">
+      {{form.submit(class='btn btn-primary')}}
+    </div>
+  </form>
+</div>
+
+{% endblock %}

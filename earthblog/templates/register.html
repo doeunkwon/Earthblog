@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<img src="{{url_for('static',filename='headers/abhas-mishra-J8RMiq7cYN4-unsplash.jpg')}}"
+style="width:100%;height:10%" alt="first">
+
+<div class="jumbotron jumbotron-fluid">
+  <h2 style='color:white'><b>Sign up</b> to share your <i>vision</i>.</h2>
+  <h6 style='color:white'>Please provide the following information:</h6>
+</div>
+
+<div class="container">
+  <form method="POST">
+    {{form.hidden_tag()}}
+    <div class="form-group">
+      {{form.email.label(class='form-group')}} {{form.email(class='form-control text-center', style='width:400px')}}
+    </div>
+    <div class="form-group">
+      {{form.username.label(class='form-group')}} {{form.username(class='form-control text-center', style='width:400px')}}
+    </div>
+    <div class="form-group">
+      {{form.password.label(class='form-group')}} {{form.password(class='form-control text-center', style='width:400px')}}
+    </div>
+    <div class="form-group">
+      {{form.pass_confirm.label(class='form-group')}} {{form.pass_confirm(class='form-control text-center', style='width:400px')}}
+    </div>
+    <div class="form-group">
+      {{form.submit(class='btn btn-primary')}}
+    </div>
+  </form>
+</div>
+
+<br><br>
+
+{% endblock %}
